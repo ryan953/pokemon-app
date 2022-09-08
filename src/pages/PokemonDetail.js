@@ -63,7 +63,7 @@ class PokemonDetail extends Component {
     setTimeout(()=> {
       this.setState({pokeAnim:pokecatch},()=> {
         setTimeout(()=> {
-            this.setState({pokeAnim:pokecatchstop,isCatch:Math.random() < 0.5},()=>{
+            this.setState({pokeAnim:pokecatchstop,isCatch:Math.random() < 0.75},()=>{
                 setTimeout(()=>{
                     this.handleClose();
                     if(this.state.isCatch)
