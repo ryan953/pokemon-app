@@ -63,7 +63,10 @@ class PokemonDetail extends Component {
     setTimeout(()=> {
       this.setState({pokeAnim:pokecatch},()=> {
         setTimeout(()=> {
-            this.setState({pokeAnim:pokecatchstop,isCatch:Math.random() < 0.75},()=>{
+            const throwScore = Math.random();
+            const isCatch = throwScore < 0.75
+            console.log({throwScore, isCatch, name:  this.props.PokemonDetail.name})
+            this.setState({pokeAnim:pokecatchstop, isCatch},()=>{
                 setTimeout(()=>{
                     this.handleClose();
                     if(this.state.isCatch)
@@ -261,7 +264,7 @@ class PokemonDetail extends Component {
   }
   
   const mapStateToProps = (state, ownProps) => {
-    console.log("list",state.pokemon.MyPokemonList);
+    console.log({MyPokemonList: state.pokemon.MyPokemonList});
      return {
        PokemonDetail:state.pokemon.PokemonDetail,
        imgPreview:state.pokemon.imgPreview,
