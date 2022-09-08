@@ -63,6 +63,18 @@
   padding-top: 15px;
   padding-bottom: 15px;
 }
+
+.navbar .avatar {
+  color: white;
+  line-height: 50px;
+
+}
+.navbar .gravatar {
+  border-radius: 50%;
+  height: 42px;
+  margin-left: 12px;
+}
+
 .table
 {
   margin-bottom:0px;

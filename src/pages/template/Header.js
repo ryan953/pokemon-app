@@ -25,6 +25,11 @@ class Header extends Component {
                             
                 </div>
                 <img id="loader" src={loader}   style={{display:(this.props.isLoaderShow ? 'block':'none')}} />
+
+                <div className="avatar pull-right">
+                  <span className="sr-mask">Ryan</span>
+                  <img className="sr-block gravatar" src="https://www.gravatar.com/avatar/f397d7e15b51e008e5bca182c54c78e0" />
+                </div> 
             </div>
         </nav>
       );

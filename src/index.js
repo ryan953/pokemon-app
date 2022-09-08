@@ -5,6 +5,30 @@ import { Provider } from 'react-redux';
 import {store} from './redux';
 
 import App from './App';
+import * as Sentry from "@sentry/react";
+import { BrowserTracing } from "@sentry/tracing";
+import { SentryReplay } from '@sentry/replay';
+
+Sentry.init({
+  dsn: "https://32e900439c044907a850b9bae30864f9@o1170741.ingest.sentry.io/6731936",
+  integrations: [
+    new BrowserTracing(),
+    new SentryReplay({
+      stickySession: true, // Default is true
+      recordingConfig: {
+        maskAllInputs: true, // Default is true
+        blockClass: 'sr-block',
+        maskTextClass: 'sr-mask',
+      },
+    }),
+  ],
+
+  // Set tracesSampleRate to 1.0 to capture 100%
+  // of transactions for performance monitoring.
+  // We recommend adjusting this value in production
+  tracesSampleRate: 1.0,
+});
+
 
 ReactDOM.render(
     <Provider store={store}>

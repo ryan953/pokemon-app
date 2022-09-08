@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@sentry/browser": "^7.12.1",
+    "@sentry/react": "^7.12.1",
+    "@sentry/replay": "^0.5.13",
+    "@sentry/tracing": "^7.12.1",
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.10",
     "react-dom": "^16.8.6",

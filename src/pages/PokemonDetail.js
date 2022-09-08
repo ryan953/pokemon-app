@@ -177,14 +177,14 @@ class PokemonDetail extends Component {
              <div className="col-md-8">
                 <div className="nickname-wrapper" style={{display:this.state.myData.nickname ? "block" : "none"}} >
                   <span className="nick-label">nickname</span>
-                  <h3>{this.state.myData.nickname}</h3>
+                  <h3 className="sr-mask">{this.state.myData.nickname}</h3>
                 </div>
                 <div className="row">
                   <div class="col-md-6">
                     <div className="subtitle"><label>General Information</label></div>
                     <table className="table table-striped table-pokemondetail">
                       <tbody>
-                          <tr><th width="90">Name</th><td>{this.props.PokemonDetail.name}</td></tr>
+                          <tr><th width="90">Nickname</th><td className="sr-mask">{this.props.PokemonDetail.name}</td></tr>
                           <tr><th width="90">Type</th>
                               <td>
                               {
