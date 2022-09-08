@@ -70,6 +70,10 @@ function fetchPokemonDetail(id){
         .then(res => {
             dispatch(loader(false));
             dispatch(setPokemonDetail(res));
+        })
+        .catch(res => {
+            dispatch(loader(false));
+            dispatch(setPokemonDetail(res));
         });
     }   
 };
