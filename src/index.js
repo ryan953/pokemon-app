@@ -19,6 +19,8 @@ Sentry.init({
         maskAllInputs: true, // Default is true
         blockClass: 'sr-block',
         maskTextClass: 'sr-mask',
+        // maskTextSelector: '*', // Hides all text on the page
+        // blockSelector: 'img', // Hide all <img> tags
       },
     }),
   ],
