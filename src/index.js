@@ -10,7 +10,10 @@ import { BrowserTracing } from "@sentry/tracing";
 import { SentryReplay } from '@sentry/replay';
 
 Sentry.init({
+  // pokedex @ wildcard-inc
   dsn: "https://32e900439c044907a850b9bae30864f9@o1170741.ingest.sentry.io/6731936",
+  // pokedex @ local devserver
+  // dsn: 'http://7fb78fda3b124ed48f7f88b0ad215de8@127.0.0.1:8000/2',
   integrations: [
     new BrowserTracing(),
     new SentryReplay({

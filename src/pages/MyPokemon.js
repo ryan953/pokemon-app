@@ -57,13 +57,12 @@ class MyPokemon extends Component {
                 {
                   this.props.MyPokemonList.map((data)  =>
                   {
-                    
                       return (<tr onClick={()=>{ history.push("/pokemon-detail/" + data.name) }}  >
                         <td className="middle" width="20"><a class="td_id">#{data.id}</a></td>
                         <td className="middle" width="40"><img height="45" src={data.image} /></td>
                         <td className="middle" >
                         <div className="name-label-list">{data.name}</div>
-                        <div className="nickname-label-list">{data.nickname}</div>
+                        <div className="nickname-label-list sr-mask">{data.nickname}</div>
                         </td>
                         <td width="90" >
                         <button className="btn-release-list btn btn-danger" data-image={data.image} data-id={data.id} onClick={this.handleReleaseShow} >RELEASE</button>

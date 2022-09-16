@@ -58,10 +58,10 @@ class PokemonList extends Component {
                      let split = data.url.split("/");
                      let id = split[split.length - 2];
                       let imgUrl = CONSTANT.IMAGE_URL + id + ".png";
-                      return (<tr onClick={()=>{ history.push("/pokemon-detail/" + data.name) }}  >
-                        <td className="middle" width="20"><a className="td_id">#{id}</a></td>
-                        <td className="middle" width="40"><img height="45" src={imgUrl} /></td>
-                        <td className="middle" >{data.name}</td>
+                      return (<tr>
+                        <td className="middle" width="20"><a className="td_id" href={`/pokemon-detail/${id}`}>#{id}</a></td>
+                        <td onClick={()=>{ history.push("/pokemon-detail/" + data.name) }} className="middle" width="40"><img height="45" src={imgUrl} /></td>
+                        <td onClick={()=>{ history.push("/pokemon-detail/" + data.name) }} className="middle" >{data.name}</td>
                       </tr> )
                   })
                 }

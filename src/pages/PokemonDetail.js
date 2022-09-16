@@ -64,7 +64,7 @@ class PokemonDetail extends Component {
       this.setState({pokeAnim:pokecatch},()=> {
         setTimeout(()=> {
             const throwScore = Math.random();
-            const isCatch = throwScore < 0.75
+            const isCatch = throwScore < (window.THROW_BASIS || 0.75)
             this.setState({pokeAnim:pokecatchstop, isCatch},()=>{
                 setTimeout(()=>{
                     this.handleClose();
@@ -183,7 +183,8 @@ class PokemonDetail extends Component {
                     <div className="subtitle"><label>General Information</label></div>
                     <table className="table table-striped table-pokemondetail">
                       <tbody>
-                          <tr><th width="90">Nickname</th><td className="sr-mask">{this.props.PokemonDetail.name}</td></tr>
+                          <tr><th width="90">Number</th><td>{this.props.PokemonDetail.id}</td></tr>
+                          <tr><th width="90">Name</th><td>{this.props.PokemonDetail.name}</td></tr>
                           <tr><th width="90">Type</th>
                               <td>
                               {

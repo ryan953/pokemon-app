@@ -1,6 +1,7 @@
 import {CONSTANT} from '../../helper';
 import {loader} from './LoaderAction';
 import { PokemonService } from '../../services/PokemonService';
+import * as Sentry from "@sentry/react";
 
 export const PokemonAction = {
     fetchPokemonList,fetchPokemonDetail,fetchMyPokemonList,saveMyPokemonList,releaseMyPokemon
@@ -28,10 +29,17 @@ function fetchMyPokemonList(){
 };
 
 function saveMyPokemonList(data,onSuccess){
+    
+
     let local = localStorage.getItem(CONSTANT.KEY_GET_MYPOKEMON_LIST);
     let mylist = local === null ? [] : JSON.parse(local);
-    let save = mylist.concat(data);
-  
+    const existingIndex = mylist.findIndex(pokemon => pokemon.id === data.id);
+    
+    let save;
+    if (existingIndex < 0) {
+        save = mylist.concat(data);
+    }
+
     localStorage.setItem(CONSTANT.KEY_GET_MYPOKEMON_LIST,JSON.stringify(save));
 
     return dispatch => {
