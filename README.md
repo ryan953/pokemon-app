@@ -27,6 +27,16 @@ $ cd pokemon-app/
 $ npm install
 $ npm start
 ```
+## Release
+```sh
+$ npm run build && npm run release
+```
+
+## Deployment
+```sh
+$ npm run serve
+```
+
 <img src="page1.png" width="250" alt="Pokemon APP preview 1"></img>
 <img src="page2.png" width="250" alt="Pokemon APP preview 2"></img>
 <img src="page3.png" width="250" alt="Pokemon APP preview 3"></img>
