@@ -65,6 +65,7 @@ class PokemonDetail extends Component {
         setTimeout(()=> {
             const throwScore = Math.random();
             const isCatch = throwScore < (window.THROW_BASIS || 0.75)
+            console.log('throw', throwScore, {isCatch});
             this.setState({pokeAnim:pokecatchstop, isCatch},()=>{
                 setTimeout(()=>{
                     this.handleClose();

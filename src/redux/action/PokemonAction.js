@@ -1,7 +1,6 @@
 import {CONSTANT} from '../../helper';
 import {loader} from './LoaderAction';
 import { PokemonService } from '../../services/PokemonService';
-import * as Sentry from "@sentry/react";
 
 export const PokemonAction = {
     fetchPokemonList,fetchPokemonDetail,fetchMyPokemonList,saveMyPokemonList,releaseMyPokemon
@@ -23,6 +22,7 @@ function fetchMyPokemonList(){
         let data = localStorage.getItem(CONSTANT.KEY_GET_MYPOKEMON_LIST);
         let mylist = data === null ? [] : JSON.parse(data);
         
+        console.log("my pokemon", mylist)
         dispatch(setMyPokemonList(mylist))
        
     }   
@@ -40,6 +40,7 @@ function saveMyPokemonList(data,onSuccess){
         save = mylist.concat(data);
     }
 
+    console.log("New pokemon saved", save);
     localStorage.setItem(CONSTANT.KEY_GET_MYPOKEMON_LIST,JSON.stringify(save));
 
     return dispatch => {
@@ -63,6 +64,7 @@ function releaseMyPokemon(id,onSuccess){
     mylist.splice(remove,1);
 
     localStorage.setItem(CONSTANT.KEY_GET_MYPOKEMON_LIST,JSON.stringify(mylist));
+    console.log("Pokemon released", mylist);
 
     return dispatch => {
         dispatch(setMyPokemonList(mylist));
